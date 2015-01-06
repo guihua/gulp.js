@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@import '../base/define.scss';
+/****************************************
+ * ui-modal component
+ ****************************************/
+.ui-modal {
+  position: absolute;
+  background: $backgroundColorModal;
+  width: 100%;
+  height: 100%;
+  z-index: zindexModal;
+  left: 0;
+  top: 0;
+  display: none;
+}

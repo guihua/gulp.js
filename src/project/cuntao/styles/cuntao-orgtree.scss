@@ -1,0 +1,161 @@
+// base
+@import "../../../cmui/sass1.2/base/base.scss";
+// widget
+@import "../../../cmui/sass1.2/widget/ui-header.scss";
+@import "../../../cmui/sass1.2/widget/ui-tab.scss";
+
+// sytles
+.ui-tab-vertical {
+  @include auto-scroll();
+  width: 100%;
+  height: 100%;
+  li {
+    margin-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    &.current {
+      &:after {
+        right: -1px;
+      }
+      .name {
+        color: #f60;
+      }
+    }
+    &.all {
+      .name {
+        &.selected {
+          color: #f60;
+        }
+      }
+    }
+    .count {
+      padding-left: 10px;
+      span {
+        padding: 0 2px;
+        &:first-child {
+          color: #f60;
+        }
+      }
+    }
+    &.operate-item:after {
+        content: '';
+        position: absolute;
+        right: 12px;
+        top: 16px;
+        width: 8px;
+        height: 12px;
+        overflow: hidden;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAZCAYAAAA4/K6pAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjdBMjA3RTAyQjJGQTExRTM4MUUyRjFFRDFDODU3MDc0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjdBMjA3RTAzQjJGQTExRTM4MUUyRjFFRDFDODU3MDc0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6N0EyMDdFMDBCMkZBMTFFMzgxRTJGMUVEMUM4NTcwNzQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6N0EyMDdFMDFCMkZBMTFFMzgxRTJGMUVEMUM4NTcwNzQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5QxDXSAAAA1klEQVR42qSUMQ7CMAxFi8UdYGGBqWdgAU7BxMbFWOAMDJQDZGeChYUroC58S0GKIid8l0hfai29J8V1PQohNPHMkCOyR24NeSSBO2SJXJDWI1D4iixibeqRqKBH3lmdlqjghWyMe1OSbw8GSyR5HiSR7N0tEUPqkkjharREKg2mJPLjM9ckOrmtEMOmkp1RnyAHRqCjfjLqT2QrBNwl/0kKr5G7/APXmkjBJQENWwIXnAvcsJ5xAutWmnvgfKW54dpKo+DSSlN4xcDWSjtH+MGu9Y8AAwBECEqAD/GitgAAAABJRU5ErkJggg==) no-repeat;
+        @include background-size(8px 12px);
+      }
+  }
+}
+.org-tree-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  @include auto-scroll();
+  .province {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFF;
+    @include auto-scroll();
+    @include transition(width 0.6s ease-in-out);
+    &.active {
+      width: 20%;
+    }
+    .ui-tab-vertical {
+      li {
+        border-bottom-color: #c8c7cc;
+        &.current:after {
+          border-right-color: #edecec;
+        }
+      }
+    }
+  }
+  .county {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    background-color: #edecec;
+    @include auto-scroll();
+    &.transition {
+      @include transition(left 0.6s ease-in-out);
+    }
+    &.active-left {
+      left: 20%;
+    }
+    &.active-width {
+      @include transition(width 0.4s ease-in-out);
+      width: 40%;
+    }
+    &.full-width {
+      left: 0;
+      width: 100%;
+      li {
+        background-color: #fff;
+        border-bottom-color: #c8c7cc;
+      }
+    }
+    &.full-width-active {
+      @include transition(width 0.4s ease-in-out);
+      width: 60%;
+    }
+    .ui-tab-vertical {
+      li {
+        border-bottom-color: #c8c7cc;
+        &.current:after {
+          border-right-color: #cfcfcf;
+        }
+      }
+    }
+  }
+  .village {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    background-color: #cfcfcf;
+    @include auto-scroll();
+    &.transition {
+      @include transition(left 0.4s ease-in-out);
+    }
+    &.active {
+      left: 60%;
+    }
+    &.full-width {
+      left: 0;
+      width: 100%;
+      background-color: #FFF;
+      li {
+        background-color: #FFF;
+        border-bottom-color: #c8c7cc;
+      }
+    }
+    .ui-tab-vertical {
+      border-bottom-color: #999;
+      li {
+        padding: 13px 0;
+        height: auto;
+        line-height: 18px;
+        border-bottom-color: #999;
+        white-space: normal;
+        word-break: break-all;
+        &.current {
+          &:after {
+            right: -20px;
+          }
+        }
+      }
+    }
+  }
+}
