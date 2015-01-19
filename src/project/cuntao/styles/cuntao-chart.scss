@@ -1,0 +1,117 @@
+// base
+@import "../../../cmui/sass1.2/base/base.scss";
+// widget
+@import "../../../cmui/sass1.2/widget/ui-header.scss";
+@import "../../../cmui/sass1.2/widget/ui-tab.scss";
+
+// styles
+.chart-view-wrap {
+  em {
+    line-height: 1;
+    font-style: normal;
+  }
+}
+.single-item-data {
+  @include display-flex();
+  padding: 10px 0;
+  border-bottom: 1px dotted #DDD;
+  li {
+    @include flex(1);
+    @include display-flex();
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #999;
+    &:first-child {
+      border-right: 1px dotted #DDD;
+    }
+    .number {
+      @include flex(1);
+      margin-right: 10px;
+      color: blue;
+      em {
+        font-size: 38px;
+      }
+    }
+    p {
+      @include flex(1);
+    }
+  }
+}
+.total-wrap {
+  position: relative;
+  margin: 20px;
+  font-size: 12px;
+  color: #999;
+  .range-switch {
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include clearfix();
+    border: 1px solid #f60;
+    @include border-radius(4px);
+    li {
+      @include float(left);
+      width: 42px;
+      height: 24px;
+      line-height: 24px;
+      background-color: #fff;
+      text-align: center;
+      font-size: 16px;
+      &:first-child {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+      &:last-child {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      a {
+        color: #f60;
+      }
+      &.current {
+        background-color: #f60;
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.chart-view {
+  width: 100%;
+  color: #999;
+  .coord-top {
+    @include clearfix();
+    padding: 0 12px;
+    span{
+      &:last-child {
+        @include float(right);
+      }
+    }
+  }
+  canvas {
+    width: 100%;
+  }
+  .coord-bottom {
+    text-align: center;
+    span {
+      position: relative;
+      padding: 0 10px;
+      font-size: 16px;
+      color: #999;
+      i {
+        display: inline-block;
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: #2a93d4;
+        vertical-align: middle;
+      }
+      &:last-child {
+        i {
+          background-color: #f60;
+        }
+      }
+    }
+  }
+}

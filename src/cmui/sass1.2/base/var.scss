@@ -1,0 +1,70 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// setting scss
+//-----------------------------------------------------	
+
+// font相关
+//-----------------------------------------------------	
+$fontFamilyBase: "Helvetica Neue", Helvetica, "Roboto", Tahoma, sans-serif !default;
+$fontSizeXSmall: 10px !default;
+$fontSizeSmall: 12px !default;
+$fontSizeBase: 14px !default;
+$fontSizeLarge: 16px !default;
+$fontSizeXLarge: 18px !default;
+$lineHeightBase: 1.5 !default;
+
+
+// 基本颜色
+// color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
+// lighten($color, $amount)
+// darken($color, $amount)
+// opacify($color, $amount)
+// mix($color1, $color2[, $amount])
+//-----------------------------------------------------	
+$black: #000 !default;
+$gray3: #333 !default;
+$gray6: #666 !default;
+$grayDark: #999 !default;
+$gray: #ccc !default;
+$grayLight: #f8f8f8 !default;
+$grayD: #ddd !default;
+$grayE: #eee !default;
+$white: #fff !default;
+
+//主色
+$active: #1996e6 !default;
+$navActive: #f60 !default;
+$arrestive: #f33 !default;
+$emphatic: #f60 !default;
+
+//background
+$backgroundColorBase: #efeff4 !default;
+$backgroundColorModal: rgba(0, 0 ,0 , 0.4) !default;
+$backgroundColorHeader: $grayLight !default;
+$backgroundColorFooter: $grayLight !default; 
+$backgroundColorFeedback: rgba(0, 0 ,0 , 0.5) !default;
+$backgroundColorDisabled: $grayE !default;
+
+//border
+$borderBase: 1px solid $grayD !default;
+$borderDark: 1px solid $gray !default;
+
+// radius
+//-----------------------------------------------------	
+$radiusBase: 5px !default;
+$radiusSmall: 3px !default;
+
+// padding
+//----------------------------------------------------- 
+$paddingBase: 0 12px !default;
+
+// z-index
+//-----------------------------------------------------	
+$zindexBase: 0 !default;
+$zindexUnder: -1 !default;
+$zindexAccordion: 100 !default;
+$zindexFixedBar: 110 !default;
+$zindexTooltip: 120 !default;
+$zindexModal: 130 !default;
+$zindexPopup: 140 !default;
+$zindexMax: 99999 !default;

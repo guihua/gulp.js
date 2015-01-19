@@ -1,0 +1,62 @@
+// base
+@import "../base/define.scss";
+
+/****************************************
+ * switch date——切换日期
+ * 
+ * author: guihua.pgh
+ * date: 20150105
+ ****************************************/
+%switchLink {
+  padding: 0 5px;
+  background-color: $white;
+}
+%switchIcon {
+  position: absolute;
+  @extend %switchLink;
+  color: $emphatic;
+}
+.ui-switch {
+  position: relative;
+  height: 40px;
+  background-color: $white;
+  .bgline {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 0;
+    border-bottom: $borderDark;
+  }
+  .ui-switch-content {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: $fontSizeSmall;
+    .prev {
+      @extend %switchIcon;
+      left: 5px;
+    }
+    .next {
+      @extend %switchIcon;
+      right: 5px;
+    }
+    .current {
+      @extend %switchLink;
+      color: $gray3;
+      font-size: $fontSizeBase;
+      i{
+        display: none;
+        height: 0;
+        border-top: 5px solid $gray6;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        vertical-align: middle;
+      }
+    }
+    .disabled {
+      color: $backgroundColorDisabled;
+    }
+  }
+}
