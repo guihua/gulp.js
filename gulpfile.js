@@ -47,8 +47,8 @@ gulp.task('connect', function() {
  * html任务
  *******************************************/
 gulp.task('html', function() {
-	return gulp.src('src/project/**/html/*.html')
-		.pipe(gulp.dest('build'))
+	return gulp.src('src/project/**/*.html')
+		.pipe(gulp.dest('build/project'))
 		.pipe(livereload())
 		.pipe(notify({
 			message : 'Html task complete'
@@ -60,7 +60,7 @@ gulp.task('html', function() {
  *******************************************/
 gulp.task('images', function() {
 	return gulp.src('src/project/**/images/*')
-		.pipe(gulp.dest('build'))
+		.pipe(gulp.dest('build/project'))
 		.pipe(livereload())
 		.pipe(notify({
 			message : 'images task complete'
@@ -80,12 +80,12 @@ gulp.task('scss', function() {
 		})) // SCSS编译
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
 		.pipe(minifycss()) // CSS压缩
-		.pipe(gulp.dest('build'))
+		.pipe(gulp.dest('build/project'))
 		.pipe(cssBase64({
 			baseDir: "../images",
 			maxWeightResource: "15360" // 设置上限为15KB，最大允许图片32KB-32768B
 		})) // 图片base64位转化
-		.pipe(gulp.dest('build'))
+		.pipe(gulp.dest('build/project'))
 		.pipe(livereload())
 		.pipe(notify({
 			message : 'Scss task complete'
@@ -103,7 +103,7 @@ gulp.task('scripts', function() {
 		.pipe(include()) // 合并以‘//= include path/to/xx.js’格式引入的js文件，或者‘#= require_tree path/to/folder’格式引入的文件夹，include关键字可以换成require
 		.pipe(jshint()) // js语法检查
 		.pipe(uglify()) // js压缩混淆
-		.pipe(gulp.dest('build'))
+		.pipe(gulp.dest('build/project'))
 		.pipe(livereload())
 		.pipe(notify({
 			message : 'Scripts task complete'
@@ -111,10 +111,24 @@ gulp.task('scripts', function() {
 });
 
 /*******************************************
+ * zeptoJS
+ * zepto js执行合并、压缩和混淆
+ *******************************************/
+gulp.task('zeptoJS', function() {
+	return gulp.src('src/javascript/zepto/src/*.js')
+		.pipe(concat('zepto.js'))
+		.pipe(jshint())
+		.pipe(gulp.dest('src/javascript/zepto'))
+		.pipe(uglify())
+		.pipe(rename('zepto.min.js'))
+		.pipe(gulp.dest('src/javascript/zepto/'));
+});
+
+/*******************************************
  * clean清理
  *******************************************/
 gulp.task('clean', function() {
-	return gulp.src(['build/**/html/', 'build/**/images/', 'build/**/css/', 'build/**/js'], {
+	return gulp.src(['build/project/**/html/', 'build/project/**/images/', 'build/project/**/css/', 'build/project/**/js'], {
 			read : false
 		}).pipe(clean());
 });
