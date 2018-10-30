@@ -1,7 +1,7 @@
 {
-  "name": "CRM-mobile-front",
+  "name": "gulp.js",
   "version": "1.0.0",
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.8.1",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-cache": "^0.2.4",
@@ -18,5 +18,17 @@
     "gulp-rename": "^1.2.0",
     "gulp-ruby-sass": "^0.7.1",
     "gulp-uglify": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-compat": "^2.6.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-markdown": "^1.0.0-rc.0",
+    "eslint-plugin-react": "^7.11.1"
   }
 }

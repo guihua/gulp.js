@@ -1,5 +1,4 @@
 .project
 /.sass-cache
 /node_modules
-/src
-/project
+/build
