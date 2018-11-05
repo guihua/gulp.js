@@ -15,7 +15,7 @@ const livereload = require('gulp-livereload');
 const minifycss = require('gulp-minify-css');
 const notify = require('gulp-notify');
 const rename = require('gulp-rename');
-const sass = require('gulp-ruby-sass');
+const less = require('gulp-less');
 const uglify = require('gulp-uglify');
 
 // 建立本地服务
@@ -54,15 +54,18 @@ gulp.task('images', () =>
       message : 'images task complete'
     })));
 
-// scss任务
-// 1.SCSS文件编译成CSS
+// less任务
+// 1.less文件编译成CSS
 // 2.压缩CSS
 // 3.images to base64
-gulp.task('scss', () =>
-  gulp.src('src/project/**/css/*.scss')
-    .pipe(sass({
-      style : 'expanded'
-    })) // SCSS编译
+gulp.task('less', () =>
+  gulp.src('src/project/**/css/*.less')
+    .pipe(
+      less().on('error', function(e) {
+        console.error(e.message);
+        this.emit('end');
+      })
+    ) // less编译
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(minifycss()) // CSS压缩
     .pipe(gulp.dest('build/project'))
@@ -73,7 +76,7 @@ gulp.task('scss', () =>
     .pipe(gulp.dest('build/project'))
     .pipe(livereload())
     .pipe(notify({
-      message : 'Scss task complete'
+      message : 'less task complete'
     })));
 
 // scripts任务
@@ -109,11 +112,11 @@ gulp.task('clean', () =>
   }).pipe(clean()));
 
 // watch监测
-// 监控HTML、SCSS、Images和Javascript文件的修改，自动进行文件编译
+// 监控HTML、less、Images和Javascript文件的修改，自动进行文件编译
 gulp.task('watch', () => {
 	gulp.watch('src/project/**/*.html', ['html']);
-	gulp.watch('src/project/**/images/*', ['images', 'scss']);
-	gulp.watch('src/project/**/css/*.scss', ['scss']);
+	gulp.watch('src/project/**/images/*', ['images', 'less']);
+	gulp.watch('src/project/**/css/*.less', ['less']);
 	gulp.watch('src/project/**/js/*.js', ['scripts']);
 
 	livereload.listen();
@@ -122,5 +125,5 @@ gulp.task('watch', () => {
 // default
 // 默认执行开发模式
 gulp.task('default', ['clean'], () => {
-	gulp.start('connect', 'html', 'images', 'scss', 'scripts', 'watch');
+	gulp.start('connect', 'html', 'images', 'less', 'scripts', 'watch');
 });
