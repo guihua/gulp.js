@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>覆盖机构</title>
+  <link rel="stylesheet" href="./css/cover.css">
+  <script src="./js/flexible.js"></script>
+  <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+  <div class="page page-cover">
+    <div class="search-bar" id="searchBar">
+      <form class="search-bar__form">
+          <div class="search-bar__box">
+              <i class="weui-icon-search"></i>
+              <input type="search" class="search-bar__input" id="searchInput" placeholder="搜索" required/>
+              <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+          </div>
+          <label class="search-bar__label" id="searchText">
+              <i class="weui-icon-search"></i>
+              <span>搜索</span>
+          </label>
+      </form>
+      <a href="javascript:" class="search-bar__cancel-btn" id="searchCancel">取消</a>
+    </div>
+
+    <div class="cells">
+      <div class="cell">
+        <div class="cell-bd">
+          <p>嘉兴市妇幼保健院</p>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="cell-bd">
+          <p>嘉兴市妇幼保健院</p>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="cell-bd">
+          <p>嘉兴市妇幼保健院</p>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="cell-bd">
+          <p>嘉兴市妇幼保健院</p>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="cell-bd">
+          <p>嘉兴市妇幼保健院</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(function(){
+      var $searchBar = $('#searchBar'),
+        $searchText = $('#searchText'),
+        $searchInput = $('#searchInput'),
+        $searchClear = $('#searchClear'),
+        $searchCancel = $('#searchCancel');
+
+      function hideSearchResult(){
+        $searchInput.val('');
+      }
+
+      function cancelSearch(){
+        hideSearchResult();
+        $searchBar.removeClass('search-bar_focusing');
+        $searchText.show();
+      }
+
+      $searchText.on('click', function(){
+        $searchBar.addClass('search-bar_focusing');
+        $searchInput.focus();
+      });
+
+      $searchInput
+        .on('blur', function () {
+          if(!this.value.length) cancelSearch();
+        });
+
+      $searchClear.on('click', function(){
+        hideSearchResult();
+        $searchInput.focus();
+      });
+
+      $searchCancel.on('click', function(){
+        cancelSearch();
+        $searchInput.blur();
+      });
+    });
+  </script>
+</body>
+</html>

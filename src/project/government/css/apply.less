@@ -1,18 +1,7 @@
 @import '../../../lib/styles/base/reset.less';
 
-.page{
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff;
-  overflow: hidden;
-  overflow-y: auto;
-
-  &-apply {
-    background-color: #F5F5F5;
-  }
+.page-apply {
+  background-color: #F5F5F5;
 }
 
 .cells {
@@ -98,21 +87,21 @@
 
     &-checkbox {
       appearance: none;
-    outline: 0;
-    font-size: 0;
+      outline: 0;
+      font-size: 0;
 
-    border: 1px solid #D1D1D1;
-    background-color: #FFFFFF;
-    border-radius: 3px;
-    width: 13px;
-    height: 13px;
-    position: relative;
+      border: 1px solid #D1D1D1;
+      background-color: #FFFFFF;
+      border-radius: 3px;
+      width: 13px;
+      height: 13px;
+      position: relative;
 
-    vertical-align: 0;
-    top: 2px;
+      vertical-align: 0;
+      top: 2px;
 
-    &:checked{
-        &:before{
+      &:checked {
+        &:before {
           font-family: "weui";
           font-style: normal;
           font-weight: normal;
@@ -132,11 +121,12 @@
           transform: translate(-50%,-48%) scale(.73);
         }
       }
-      &:disabled{
-          background-color:#E1E1E1;
-          &:before{
-              color:#ADADAD;
-          }
+      &:disabled {
+        background-color:#E1E1E1;
+
+        &:before{
+            color:#ADADAD;
+        }
       }
     }
     &-text {

@@ -1,0 +1,52 @@
+@import '../../../lib/styles/base/reset.less';
+
+.page-log {
+  background-color: #F5F5F5;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  padding: 0 16px;
+  min-height: 81px;
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #999;
+
+  &-body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  &-content {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  &-title {
+    margin-bottom: 4px;
+    line-height: 25px;
+    font-size: 15px;
+    color: #333;
+    font-weight: normal;
+  }
+
+  &-subtitle {
+    margin-bottom: 2px;
+    line-height: 20px;
+    font-size: 15px;
+    color: #333;
+  }
+
+  &-thumb {
+    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 2px;
+  }
+}
