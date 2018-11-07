@@ -2,6 +2,32 @@
 
 .page-log {
   background-color: #F5F5F5;
+
+  .empty {
+    position: relative;
+    padding: 12px;
+    background-color: #fff;
+    text-align: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 10px;
+      top: 25px;
+      width: 35%;
+      height: 1px;
+      background-color: #ccc;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 25px;
+      width: 35%;
+      height: 1px;
+      background-color: #ccc;
+    }
+  }
 }
 
 .card {

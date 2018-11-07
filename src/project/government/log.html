@@ -7,30 +7,29 @@
   <title>诊疗记录</title>
   <link rel="stylesheet" href="./css/log.css">
   <script src="./js/flexible.js"></script>
+  <script src="https://unibase.zjzwfw.gov.cn/DTHybirdEngine/DtDream/hybridapi.js"></script>
+  <script>
+    dd.biz.navigation.setTitle({
+      title: '诊疗记录',
+    });
+  </script>
 </head>
-<body>
-  <div class="page page-log">
-    <div class="card">
-      <div class="card-body">
-        <img src="./images/icon02.png" alt="" class="card-thumb">
-        <div class="card-content">
-          <h3 class="card-title">医院：浙江省人民医院</h3>
-          <p class="card-subtitle">科室：普通外科</p>
-          <p>日期：2018-10-08</p>
-        </div>
-      </div>
-    </div>
 
+<body>
+  <div class="page page-log"></div>
+
+  <script type="text/template" id="log-template">
     <div class="card">
       <div class="card-body">
-        <img src="./images/icon02.png" alt="" class="card-thumb">
+        <img src={url} alt="" class="card-thumb">
         <div class="card-content">
-          <h3 class="card-title">医院：浙江省人民医院</h3>
-          <p class="card-subtitle">科室：普通外科</p>
-          <p>日期：2018-10-08</p>
+          <h3 class="card-title">医院：{medorgname}</h3>
+          <p class="card-subtitle">科室：{depcode}</p>
+          <p>日期：{scardtime}</p>
         </div>
       </div>
     </div>
-  </div>
+  </script>
+  <script src="./js/log.js"></script>
 </body>
 </html>

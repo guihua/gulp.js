@@ -7,6 +7,12 @@
   <title>浙江省居民电子健康卡申领</title>
   <link rel="stylesheet" href="./css/apply.css">
   <script src="./js/flexible.js"></script>
+  <script src="https://unibase.zjzwfw.gov.cn/DTHybirdEngine/DtDream/hybridapi.js"></script>
+  <script>
+    dd.biz.navigation.setTitle({
+      title: '电子健康卡申领',
+    });
+  </script>
 </head>
 <body>
   <div class="page page-apply">
@@ -20,16 +26,13 @@
         </div>
       </div>
       <div class="cell">
-          <div class="cell-hd">
-            <label for="" class="cell-label">身份证号码</label>
-          </div>
-          <div class="cell-bd">
-            <span class="cell-input">2341234124******32543253</span>
-          </div>
+        <div class="cell-hd">
+          <label for="" class="cell-label">身份证号码</label>
         </div>
-    </div>
-
-    <div class="cells">
+        <div class="cell-bd">
+          <span class="cell-input">2341234124******32543253</span>
+        </div>
+      </div>
       <div class="cell">
         <div class="cell-hd">
           <label for="" class="cell-label">手机号</label>
@@ -41,36 +44,27 @@
     </div>
 
     <div class="cells">
-        <div class="cell">
-          <div class="cell-hd">
-            <label for="" class="cell-label">手机号</label>
-          </div>
-          <div class="cell-bd">
-            <input type="tel" class="cell-input" value="12123412" />
-          </div>
-        </div>
-        <div class="cell cell-vcode">
-          <div class="cell-hd">
-            <label for="" class="cell-label">验证码</label>
-          </div>
-          <div class="cell-bd">
-            <input type="text" class="cell-input" placeholder="请输入" />
-          </div>
-          <div class="cell-ft">
-            <button class="vcode-btn">获取验证码</button>
-          </div>
-        </div>
-      </div>
-
-    <div class="cells">
-      <div class="cell">
+      <div class="cell cell-select">
         <div class="cell-hd">
-          <label for="" class="cell-label">地址</label>
+          <label for="" class="cell-label">城市</label>
         </div>
         <div class="cell-bd">
-          <input type="tel" class="cell-input" />
+          <select id="city" class="select">
+            <option>请选择城市</option>
+          </select>
         </div>
+        <div class="cell-ft"></div>
       </div>
+      <div class="cell cell-select">
+          <div class="cell-hd">
+            <label for="" class="cell-label">区域</label>
+          </div>
+          <div class="cell-bd">
+            <select id="region" class="select">
+              <option>请选择区域</option>
+            </select>
+          </div>
+        </div>
       <div class="cell">
         <div class="cell-hd">
           <label for="" class="cell-label"></label>
@@ -82,7 +76,7 @@
     </div>
 
     <label for="agree" class="cell-agree">
-      <input id="agree" type="checkbox" class="cell-agree-checkbox">
+      <input id="agree" type="checkbox" class="cell-agree-checkbox" />
       <span class="cell-agree-text">
         我已阅读并同意<a href="javascript:void(0);">《电子健康卡开通协议》</a>
       </span>
@@ -92,5 +86,7 @@
       <a class="btn btn-primary" href="javascript:">确认</a>
     </div>
   </div>
+
+  <script src="./js/apply.js"></script>
 </body>
 </html>

@@ -7,6 +7,12 @@
   <title>浙江省居民电子健康卡</title>
   <link rel="stylesheet" href="./css/index.css">
   <script src="./js/flexible.js"></script>
+  <script src="https://unibase.zjzwfw.gov.cn/DTHybirdEngine/DtDream/hybridapi.js"></script>
+  <script>
+    dd.biz.navigation.setTitle({
+      title: '浙江省居民电子健康卡',
+    });
+  </script>
 </head>
 <body>
   <div class="page">
@@ -16,11 +22,11 @@
 
     <div class="menu-wrapper">
       <ul class="menu">
-        <li>
+        <li data-id="cover">
           <img src="./images/icon01.png" alt="">
           <span>覆盖机构</span>
         </li>
-        <li>
+        <li data-id="log">
           <img src="./images/icon02.png" alt="">
           <span>诊疗记录</span>
         </li>
@@ -52,5 +58,7 @@
       </div>
     </div>
   </div>
+
+  <script src="./js/index.js"></script>
 </body>
 </html>
